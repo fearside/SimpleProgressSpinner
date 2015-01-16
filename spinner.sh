@@ -5,19 +5,19 @@
 function Spinner {
 
 # Initiate spinner indicator
-if [ -z $indicator ]; then
-	indicator="\\"
+if [ -z $_indicator ]; then
+	_indicator="\\"
 fi
 
-case $indicator in
-	"|") indicator="/";;
-	"/") indicator="-";;
-	"-") indicator="\\";;
-	"\\") indicator="|";;
+case ${_indicator} in
+	"|") _indicator="/";;
+	"/") _indicator="-";;
+	"-") _indicator="\\";;
+	"\\") _indicator="|";;
 esac
 
 # Print simple progress spinner
-printf "\b${indicator}"
+printf "\b${_indicator}"
 
 }
 
