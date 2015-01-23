@@ -4,21 +4,18 @@
 # Create spinner function
 function Spinner {
 
-# Initiate spinner indicator
-if [ -z $_indicator ]; then
-	_indicator="\\"
-fi
-
+# Choose which character to show.
 case ${_indicator} in
 	"|") _indicator="/";;
 	"/") _indicator="-";;
 	"-") _indicator="\\";;
 	"\\") _indicator="|";;
+	# Initiate spinner character
+	*) _indicator="\\";;
 esac
 
 # Print simple progress spinner
-printf "\b${_indicator}"
-
+printf "\r${_indicator}"
 }
 
 # Variables
